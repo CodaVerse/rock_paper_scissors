@@ -1,0 +1,1 @@
+This mini project is part of The Odin Project's curriculum as we navigate through functions. This will be a basic program to randomly generate an opponent response to a Rock Paper Scissors game and display whether or not you (the user) wins or loses.
