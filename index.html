@@ -1,0 +1,121 @@
+<head>
+
+</head>
+
+<body>
+    <script>
+        function game() {
+            let compScore = 0;
+            let playerScore = 0;
+
+            for (i = 0; i < 5; i++) {
+
+                let input; //declare the variable
+
+                function response() { //prompt for the user guess input
+                    while ((input != 'rock') && (input != 'paper') && (input != 'scissors')) {
+                        //continues to prompt until a valid input is entered
+                        input = prompt('Which do you choose? (Rock, Paper, or Scissors)');
+                    }
+
+                }
+
+                response();
+
+                function computerPlay() { //Creates the computer's guess
+                    let randomVal = Math.ceil(Math.random() * 3); // Takes a random number between 0 and 1, then multiplies by 3, rounding up to the nearest integer
+                    if (randomVal == 1) {
+                        randomVal = 'ROCK';
+                        return randomVal;
+                    } else if (randomVal == 2) {
+                        randomVal = 'PAPER';
+                        return randomVal;
+                    } else if (randomVal == 3) {
+                        randomVal = 'SCISSORS';
+                        return randomVal;
+                    }
+                }
+
+                let computerSelection = computerPlay(); //Store computer's guess in a variable
+
+                function makeUpper(response) { // Define a new function to convert user inputs to all CAPS
+                    return response.toUpperCase(); // Returns the string in all CAPS
+                }
+
+                let playerSelection = makeUpper(input);
+                // Create a new variable, which is assigned the all CAPS version of the input
+
+                oneHand(playerSelection, computerSelection); // Calls the oneHand function, feeding it the user and computer guesses
+
+                function oneHand(playerSelection, computerSelection) {
+
+                    switch (playerSelection) {
+                        case 'ROCK': {
+                            if (computerSelection == 'ROCK') {
+                                i--;
+                                alert(`Tie game! You both chose Rock!\r\nScore is now (You: ${playerScore}; Computer: ${compScore})`);
+                            }
+                            else if (computerSelection == 'PAPER') {
+                                compScore++;
+                                alert(`You lose! Computer chose Paper.\r\nScore is now (You: ${playerScore}; Computer: ${compScore})`);
+                            }
+                            else if (computerSelection == 'SCISSORS') {
+                                playerScore++;
+                                alert(`You win! Computer chose Scissors and you smashed em up good!\r\nScore is now (You: ${playerScore}; Computer: ${compScore})`);
+                            } else {
+                                alert('Something happened. You broke the system.')
+                            }
+                            break;
+                        };
+                        case 'PAPER': {
+                            if (computerSelection == 'ROCK') {
+                                playerScore++;
+                                alert(`You win! Computer chose Rock, and Paper covers Rock.\r\nScore is now (You: ${playerScore}; Computer: ${compScore})`);
+                            }
+                            else if (computerSelection == 'PAPER') {
+                                i--;
+                                alert(`Tie game! Paper can\'t beat paper. That\'s just a stack of paper.\r\nScore is now (You: ${playerScore}; Computer: ${compScore})`);
+                            }
+                            else if (computerSelection == 'SCISSORS') {
+                                compScore++;
+                                alert(`Uh oh... Computer chose scissors. Tough luck, Scrappy!\r\nScore is now (You: ${playerScore}; Computer: ${compScore})`);
+                            } else {
+                                alert('Something happened. You broke the system.')
+                            }
+                            break;
+                        };
+                        case 'SCISSORS': {
+                            if (computerSelection == 'ROCK') {
+                                compScore++;
+                                alert(`YIKES! Computer\'s Rock just smashed your Scissors!\r\nScore is now (You: ${playerScore}; Computer: ${compScore})`);
+                            }
+                            else if (computerSelection == 'PAPER') {
+                                playerScore++;
+                                alert(`Nice going! You get to cut the Paper all up!\r\nScore is now (You: ${playerScore}; Computer: ${compScore})`);
+                            }
+                            else if (computerSelection == 'SCISSORS') {
+                                i--;
+                                alert(`Tie game. What are the odds you both chose Scissors? Actually, it\'s one out of 9. Those are the odds. One out of 9.\r\nScore is now (You: ${playerScore}; Computer: ${compScore})`);
+                            } else {
+                                alert('Something happened. You broke the system.')
+                            }
+                            break;
+                        };
+                    };
+                }// End func oneHand
+
+                if (i == 4) {
+                    if (playerScore > compScore) {
+                        alert(`YOU WON THE SERIES!\r\nFinal score (You: ${playerScore}; Computer: ${compScore}).`);
+                    } else if (compScore > playerScore) {
+                        alert(`The computer won the 5-hand game.\r\nFinal score (You: ${playerScore}; Computer: ${compScore}).`);
+                    } else {
+                        alert('Something went wrong with the final score tally.\r\nNotify the administrator.')
+                    }
+                };
+            };
+        }//end game() function declaration
+
+        game();
+    </script>
+</body>
