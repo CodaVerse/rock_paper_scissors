@@ -1,0 +1,142 @@
+        * {
+            font-family: 'Baloo Tamma 2', Arial;
+        }
+
+        #begin-div {
+            position: relative;
+            height: 45px;
+        }
+        .choices {
+            transition: ease-in-out all .5s;
+            transform: scale(1);
+        }
+
+        .choices:active {
+            transform: scale(1.15);
+            border-radius: 20px;
+        }
+
+        #begin {
+            width: 135px;
+            height: 35px;
+            margin: 0;
+            position: absolute;
+            outline: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 15px;
+            border-radius: 10px;
+            background-color: rgb(59, 231, 137);
+            font-weight: bold;
+        }
+
+        #begin:hover {
+            background-color: rgb(91, 243, 136);
+            transition: 0.3s;
+            border-radius: 20px;
+        }
+
+        .boards {
+            width: 350px;
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 5px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            background-color: rgba(204, 201, 177, 0.6);
+        }
+
+        body {
+            background-color: rgba(186, 239, 243, 0.5);
+            /* background-image: url("../Rock_Paper_Scissors/rock-paper-scissors-156171_1280.png");
+            background-repeat: no-repeat; 
+            background-size: 5% 10%;
+            background-position: center; */
+        }
+
+        #choices-div {
+            display: flex;
+            position: relative;
+            height: 140px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .choices {
+            width: 85px;
+            height: 35px;
+            margin: 15px;
+            font-size: 18px;
+            border-radius: 10px;
+            outline: 0;
+        }
+
+        .choices:hover {
+            background-color: rgb(255, 160, 97);
+            transition: 0.5s;
+            font-weight: bold;
+        }
+
+        #comp-score-number {
+            height: 45px;
+            color: rgb(68, 84, 224);
+            font-size: 68px;
+            font-weight: bold;
+        }
+
+        #current-score {
+            text-align: center;
+        }
+
+        #description {
+            text-align: center;
+            padding: 0px;
+            margin-left: 10px;
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        #game-title {
+            text-align: center;
+            margin: 0;
+            background-color: rgba(66, 196, 248, 0.35);
+            box-shadow: 0px 0px 25px gray;
+        }
+
+        #results-comments {
+            height: 1rem;
+            /* margin: 15px;
+            font-size: 18px;
+            border-radius: 10px;
+            outline: 0; */
+        }
+
+        /* #rps-img {
+            background-image: url('w3css.gif');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center; 
+        } */
+
+        #scoreboard {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .score-title {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        #user-score-number {
+            height: 45px;
+            color: rgb(68, 84, 224);
+            font-size: 68px;
+            font-weight: bold;
+        }
+
+
