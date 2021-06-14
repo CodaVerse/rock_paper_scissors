@@ -2,14 +2,14 @@ let playerSelection = ""; // will be passed into the game function based on a bu
 let computerSelection = ""; // a random assignment for computer to pick ROCK, PAPER, or SCISSORS
 let playerScore = 0; // how many times the player has bested the computer
 let computerScore = 0; // how many times the computer bested the player
-let resultsComments = document.getElementById("results-comments").innerHTML
+let resultsComments = document.getElementById("results-comments").textContent
 
 function reset() { // sets up a new game
     location.reload();
 }
 function updateScores() { // displays the user and computer scores in different <divs>
-    document.getElementById("user-score-number").innerHTML = playerScore; //Update current score
-    document.getElementById("comp-score-number").innerHTML = computerScore; //Update current score
+    document.getElementById("user-score-number").textContent = playerScore; //Update current score
+    document.getElementById("comp-score-number").textContent = computerScore; //Update current score
 }
 function getComputerSelection() {
     let randomVal = Math.ceil(Math.random() * 3);
