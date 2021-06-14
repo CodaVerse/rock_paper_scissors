@@ -29,12 +29,12 @@ function checkScores() {
             document.getElementById("results-comments").style.color = 'green';
             document.getElementById("results-comments").style.textAlign = 'center';
             document.getElementById("results-comments").style.fontSize = '2rem';
-            document.getElementById("results-comments").innerHTML = 'The game is over! YOU\'VE WON!';
+            document.getElementById("results-comments").textContent = 'The game is over! YOU\'VE WON!';
         } else {
             document.getElementById("results-comments").style.color = 'red';
             document.getElementById("results-comments").style.textAlign = 'center';
             document.getElementById("results-comments").style.fontSize = '2rem';
-            document.getElementById("results-comments").innerHTML = 'The game is over! SORRY! YOU\'VE LOST!';
+            document.getElementById("results-comments").textContent = 'The game is over! SORRY! YOU\'VE LOST!';
         }
         document.getElementById("rock").removeEventListener("click", compareHand());
         document.getElementById("paper").removeEventListener("click", compareHand());
@@ -49,31 +49,31 @@ function compareHand(playerSelection) { // takes the input of playerSelection fr
         return;
     } else {
         if (playerSelection === computerSelection) {
-            document.getElementById("results-comments").innerHTML = `Tie game! You picked ${playerSelection} and the computer picked ${computerSelection}.`;
+            document.getElementById("results-comments").textContent = `Tie game! You picked ${playerSelection} and the computer picked ${computerSelection}.`;
             updateScores();
         } else if ((playerSelection === 'ROCK') && (computerSelection === 'PAPER')) {
             computerScore++;
-            document.getElementById("results-comments").innerHTML = 'You lose! Computer chose Paper.';
+            document.getElementById("results-comments").textContent = 'You lose! Computer chose Paper.';
             updateScores();
         } else if ((playerSelection === 'ROCK') && (computerSelection === 'SCISSORS')) {
             playerScore++;
-            document.getElementById("results-comments").innerHTML = 'You win! Computer chose Scissors and you smashed em up good!';
+            document.getElementById("results-comments").textContent = 'You win! Computer chose Scissors and you smashed em up good!';
             updateScores();
         } else if ((playerSelection === 'PAPER') && (computerSelection === 'ROCK')) {
             playerScore++;
-            document.getElementById("results-comments").innerHTML = 'You win! Computer chose Rock, and Paper covers Rock.';
+            document.getElementById("results-comments").textContent = 'You win! Computer chose Rock, and Paper covers Rock.';
             updateScores();
         } else if ((playerSelection === 'PAPER') && (computerSelection === 'SCISSORS')) {
             computerScore++;
-            document.getElementById("results-comments").innerHTML = 'Uh oh... Computer chose scissors. Tough luck, Scrappy!';
+            document.getElementById("results-comments").textContent = 'Uh oh... Computer chose scissors. Tough luck, Scrappy!';
             updateScores();
         } else if ((playerSelection === 'SCISSORS') && (computerSelection === 'ROCK')) {
             computerScore++;
-            document.getElementById("results-comments").innerHTML = 'YIKES! Computer\'s Rock just smashed your Scissors!';
+            document.getElementById("results-comments").textContent = 'YIKES! Computer\'s Rock just smashed your Scissors!';
             updateScores();
         } else if ((playerSelection === 'SCISSORS') && (computerSelection === 'PAPER')) {
             playerScore++;
-            document.getElementById("results-comments").innerHTML = 'Nice going! You get to cut the Paper all up!';
+            document.getElementById("results-comments").textContent = 'Nice going! You get to cut the Paper all up!';
             updateScores();
         } else {
             alert('Contact the administrator. You\'ve broken everything.');
